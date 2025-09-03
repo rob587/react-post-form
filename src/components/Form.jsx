@@ -18,8 +18,11 @@ const Form = () => {
     })
 
     const handleForm = (e) =>{
-        formData[e.target.name] = e.target.value
-        setFormData({...formData})
+        const {name, value} = e.target
+
+            setFormData({
+                ...formData, [name] : value === "true" ? true : value === "false" ? false : value
+            })
     }
 
 
