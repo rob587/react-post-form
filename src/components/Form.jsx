@@ -6,10 +6,15 @@ import { useState } from 'react'
 
 const Form = () => {
 
+    const url =`https://67c5b4f3351c081993fb1ab6.mockapi.io/api/posts`
+
+   
+
     const[formData, setFormData] = useState({
-        name: "",
+        author: "",
         title: "",
-        body: ""
+        body: "",
+        public: false
     })
 
     const handleForm = (e) =>{
@@ -30,10 +35,10 @@ const Form = () => {
             <div className="col-6">
                 <div>
                     <input type="text"
-                    name='name'
+                    name='author'
                     placeholder='Nome Autore'
                     className='form-control'
-                    value={formData.name}
+                    value={formData.author}
                     onChange={handleForm}
                     />
                 </div>
@@ -70,17 +75,18 @@ const Form = () => {
                             <p>Pubblico</p>
 
                             <input type="radio"
-                            name='true'
-                            // value={}
-                            // onChange={}
+                            name='public'
+                            value="true"
+                            checked={formData.public===true}
+                            onChange={handleForm}
                         
                             />
                             <p>Bozza</p>
-                            <input type="radio"
-                            
-                            name='false'
-                            // value={}
-                            // onChange={}
+                            <input type="radio"       
+                            name='public'
+                            value="false"
+                            checked={formData.public===false}
+                            onChange={handleForm}
                             />
                          </label>       
                     </div>
