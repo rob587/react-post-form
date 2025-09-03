@@ -25,6 +25,12 @@ const Form = () => {
             })
     }
 
+    const handleSubmit = () => {
+        axios.post(url, formData).then((res)=>{
+            console.log("Risposta API:", res.data)
+        })
+    }
+
 
   return (
     <>
@@ -72,7 +78,7 @@ const Form = () => {
                 <div className="col-12">
                     <div>
 
-                        <h2>Vorrebbe pubblicarlo o renderlo bozza?</h2>
+                        <h2>Vorresti pubblicarlo o renderlo bozza?</h2>
                         <label>
                             
                             <p>Pubblico</p>
@@ -95,7 +101,7 @@ const Form = () => {
                     </div>
                 </div>
                 <div className="col-12 d-flex justify-content-end">
-                    <div className="btn btn-success fs-3 p-3">Aggiungi Post</div>
+                    <button className="btn btn-success fs-3 p-3" onClick={handleSubmit} >Aggiungi Post</button>
                 </div>
             </div>
         </div>
