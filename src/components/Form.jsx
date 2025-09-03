@@ -5,6 +5,19 @@ import { useState } from 'react'
 
 
 const Form = () => {
+
+    const[formData, setFormData] = useState({
+        name: "",
+        title: "",
+        body: ""
+    })
+
+    const handleForm = (e) =>{
+        formData[e.target.name] = e.target.value
+        setFormData({...formData})
+    }
+
+
   return (
     <>
 
@@ -20,8 +33,8 @@ const Form = () => {
                     name='name'
                     placeholder='Nome Autore'
                     className='form-control'
-                    // value={}
-                    // onChange={}
+                    value={formData.name}
+                    onChange={handleForm}
                     />
                 </div>
             </div>
@@ -31,8 +44,8 @@ const Form = () => {
                     name='title'
                     placeholder='Nome Opera'
                     className='form-control'
-                    // value={}
-                    // onChange={}
+                    value={formData.title}
+                    onChange={handleForm}
                     />
                 </div>
             </div>
@@ -42,8 +55,8 @@ const Form = () => {
                     name='body'
                     placeholder='Testo Opera'
                     className='form-control'
-                    // value={}
-                    // onChange={}
+                    value={formData.body}
+                    onChange={handleForm}
                     />
                 </div>
             </div>
@@ -71,6 +84,9 @@ const Form = () => {
                             />
                          </label>       
                     </div>
+                </div>
+                <div className="col-12 d-flex justify-content-end">
+                    <div className="btn btn-success fs-3 p-3">Aggiungi Post</div>
                 </div>
             </div>
         </div>
