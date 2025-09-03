@@ -62,7 +62,7 @@ const Form = () => {
                             // onChange={}
                         
                             />
-                            <p >Bozza</p>
+                            <p>Bozza</p>
                             <input type="radio"
                             
                             name='false'
