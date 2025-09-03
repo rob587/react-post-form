@@ -1,5 +1,4 @@
-import React from 'react'
-import App from '../App'
+
 import axios from 'axios'
 import { useState } from 'react'
 
@@ -39,14 +38,14 @@ const Form = () => {
         <h1 className='text-center'>Idee da inserire dentro il blog</h1>
     </div>
 
-    <div className="container my-5">
+    <div className="container my-5 p-4 rounded shadow-lg bg-light">
         <div className="row gy-4">
             <div className="col-6">
                 <div>
                     <input type="text"
                     name='author'
                     placeholder='Nome Autore'
-                    className='form-control'
+                    className='form-control rounded shadow-sm'
                     value={formData.author}
                     onChange={handleForm}
                     />
@@ -57,7 +56,7 @@ const Form = () => {
                     <input type="text"
                     name='title'
                     placeholder='Nome Opera'
-                    className='form-control'
+                    className='form-control rounded shadow-sm'
                     value={formData.title}
                     onChange={handleForm}
                     />
@@ -68,7 +67,7 @@ const Form = () => {
                     <input type="text"
                     name='body'
                     placeholder='Testo Opera'
-                    className='form-control'
+                    className='form-control rounded shadow-sm'
                     value={formData.body}
                     onChange={handleForm}
                     />
@@ -76,7 +75,7 @@ const Form = () => {
             </div>
             <div className="row">
                 <div className="col-12">
-                    <div>
+                    <div className='mt-4'>
 
                         <h2>Vorresti pubblicarlo o renderlo bozza?</h2>
                         <label>
@@ -101,7 +100,7 @@ const Form = () => {
                     </div>
                 </div>
                 <div className="col-12 d-flex justify-content-end">
-                    <button className="btn btn-success fs-3 p-3" onClick={handleSubmit} >Aggiungi Post</button>
+                    <button className="btn btn-success fs-3 p-3 rounded-3 shadow" onClick={handleSubmit} >Aggiungi Post</button>
                 </div>
             </div>
         </div>
