@@ -28,6 +28,8 @@ const Form = () => {
         axios.post(url, formData).then((res)=>{
             console.log("Risposta API:", res.data)
         })
+        .catch((err)=>
+        console.log("errore nella chiamata" + err))
     }
 
 
