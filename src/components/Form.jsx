@@ -64,12 +64,14 @@ const Form = () => {
             </div>
             <div className="col-6">
                 <div>
-                    <input type="text"
+                    <textarea type="text" 
                     name='body'
                     placeholder='Testo Opera'
                     className='form-control rounded shadow-sm'
                     value={formData.body}
                     onChange={handleForm}
+                    
+
                     />
                 </div>
             </div>
